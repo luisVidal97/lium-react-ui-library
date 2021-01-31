@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests over <InputText/>: features and behavior should show <Button/> successfully 1`] = `
+<Fragment>
+  <styled.input
+    backgroundColor="transparent"
+    border="10px"
+    color="#115293"
+    fontSize="1rem"
+    pointerEvent="auto"
+    shapeSize="32px"
+    type="text"
+  />
+</Fragment>
+`;

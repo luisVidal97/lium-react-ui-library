@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests over <Button/>: features and behavior should show <Button/> successfully 1`] = `
+<Fragment>
+  <styled.button
+    backgroundBtn="#115293"
+    backgroundBtnHover="#0A0A36"
+    borderBtn="#115293"
+    borderBtnHover="#0A0A36"
+    cursor="pointer"
+    overallColor="white"
+    shape="contained"
+    size="40px"
+    text=""
+  />
+</Fragment>
+`;
