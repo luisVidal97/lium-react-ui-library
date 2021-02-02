@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests over <AutocompleteInput/>: features and behavior should show <AutocompleteInput/> successfully 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <styled.input
+    backgroundColor="transparent"
+    border="10px"
+    borderColor="#115293"
+    fontSize="1rem"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    pointerEvent="auto"
+    shapeSize="32px"
+    value=""
+  />
+</div>
+`;
+
+exports[`Tests over <Button/>: features and behavior should show <AutocompleteInput/> successfully 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <styled.input
+    backgroundColor="transparent"
+    border="10px"
+    borderColor="#115293"
+    fontSize="1rem"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    pointerEvent="auto"
+    shapeSize="32px"
+    value=""
+  />
+</div>
+`;
