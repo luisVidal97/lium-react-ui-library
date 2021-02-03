@@ -29,7 +29,6 @@ Button.propTypes = {
   shape: PropTypes.string,
   text: PropTypes.string,
   color: PropTypes.string,
-  type: PropTypes.string,
   onClick: PropTypes.func,
   border: PropTypes.string,
 }
