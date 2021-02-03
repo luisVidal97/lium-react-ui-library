@@ -6,7 +6,7 @@ export const SelectInputList = () => {
   const [selectons, setSelectons] = useState([]);
   const [array, setArray] = useState([
     {
-      id: '1234',
+      id: 'USA',
       value: 'United States'
     },
     {

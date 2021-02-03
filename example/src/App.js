@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { ExampleComponent } from 'lium-react-ui-library'
 import { ButtonList } from './components/ButtonList';
 import { InputTextList } from './components/InputTextList';
 import { InputNumberList } from './components/InputNumberList';
@@ -14,8 +13,7 @@ const styles = {
 const App = () => {
   return (
     <div style={styles}>
-      <br/>
-      <ExampleComponent text="Create React Library Example 😄" />
+
       <br/>
       <hr/>
       <ButtonList />

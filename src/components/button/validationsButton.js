@@ -1,7 +1,7 @@
-import {colors, forms, heights} from '../globalVariables'
+import {colors, forms, heightsInputText, borderRadius} from '../globalVariables'
 
 
-export const validations = ( {text, disabled: disabledBtn, shape, color, size} ) =>{
+export const validations = ( {text, disabled: disabledBtn, shape, color, size, border} ) =>{
 
   text = text || '';
   shape = shape?
@@ -42,19 +42,32 @@ export const validations = ( {text, disabled: disabledBtn, shape, color, size} )
     borderBtnHover = color.hover;
   }
 
-  size = size?
-    heights[size] || heights['medium']
-    : heights['medium'];
+
+  const shapeSize = size && heightsInputText[size]?
+  heightsInputText[size].shape
+  : heightsInputText['medium'].shape;
+
+  const fontSize = size && heightsInputText[size]?
+  heightsInputText[size].font
+  : heightsInputText['medium'].font;
+
+  let borderRadiusBtn = border && borderRadius[border]?
+    borderRadius[border]
+    :
+    borderRadius['normal'];
+
 
   return {
     text,
     shape,
-    size ,
+    fontSize,
+    shapeSize ,
     overallColor,
     backgroundBtn,
     backgroundBtnHover,
     borderBtn,
     borderBtnHover,
-    cursor
+    cursor,
+    borderRadiusBtn,
   };
 }

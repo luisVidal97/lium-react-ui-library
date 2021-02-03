@@ -30,6 +30,14 @@ export const ButtonList = () => {
       <br/>
 
       <div>
+        <Button border="none" shape="outlined" color="primary" text="primary" />
+        <Button border="normal" shape="outlined" color="secondary"text="secondary" />
+        <Button border="strong" shape="outlined" color="danger"text="danger" />
+      </div>
+
+      <br/>
+
+      <div>
         <Button size="small" text="small" />
         <Button size="medium" text="medium" />
         <Button size="large" text="large" />

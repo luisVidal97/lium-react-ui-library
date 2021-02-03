@@ -1,11 +1,6 @@
 
 const forms = ['contained', 'outlined'];
 
-const heights = {
-  large: '50px',
-  medium: '40px',
-  small: '30px',
-}
 
 const borderRadius = {
   strong: '20px',
@@ -61,4 +56,4 @@ const defaultStyle = {
   hover: '#686767',
 }
 
-export { forms, borderRadius, heights, heightsInputText, colors, defaultStyle } ;
+export { forms, borderRadius, heightsInputText, colors, defaultStyle } ;

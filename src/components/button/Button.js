@@ -31,6 +31,7 @@ Button.propTypes = {
   color: PropTypes.string,
   type: PropTypes.string,
   onClick: PropTypes.func,
+  border: PropTypes.string,
 }
 
 export default Button;

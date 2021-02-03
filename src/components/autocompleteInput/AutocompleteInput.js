@@ -87,6 +87,7 @@ AutocompleteInput.propTypes = {
   color: PropTypes.string,
   placeholder: PropTypes.string,
   maxLength: PropTypes.string,
+  disabled: PropTypes.string,
   onChange: PropTypes.func,
 }
 
