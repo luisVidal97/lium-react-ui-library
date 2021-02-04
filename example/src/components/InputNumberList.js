@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InputNumber } from 'lium-react-ui-library';
 
+const theme = {
+  primary: {
+    normal: '#bf00ff',
+    hover: '#400554',
+  },
+  secondary: {
+    normal: '#0ac9ff',
+    hover: '#196d84',
+  },
+  danger: {
+      normal: '#ff0000',
+      hover: '#cc0000',
+  },
+}
+
+
 export const InputNumberList = () => {
+
+  const [state, setState] = useState("1000");
 
 
   return (
     <>
       <div>
-        <InputNumber placeholder="primary" color="primary"/>
-        <InputNumber placeholder="secondary" color="secondary"/>
+        <InputNumber placeholder="primary" themes={theme} color="primary"/>
+        <InputNumber placeholder="secondary" themes={theme} color="secondary"/>
         <InputNumber placeholder="danger" color="danger"/>
         <InputNumber placeholder="success" color="success"/>
         <InputNumber placeholder="warning" color="warning"/>
@@ -25,7 +43,7 @@ export const InputNumberList = () => {
       </div>
 
       <div>
-        <InputNumber prefix='$' formatter='true' size='small'/>
+        <InputNumber prefix='$' formatter='true' size='small' value={state} onChange={ (e, number) => { setState(number)}}/>
         <InputNumber prefix='$' formatter='true' size='medium'/>
         <InputNumber prefix='$' formatter='true' size='large'/>
       </div>

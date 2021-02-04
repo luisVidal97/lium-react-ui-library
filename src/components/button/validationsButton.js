@@ -1,7 +1,12 @@
-import {colors, forms, heightsInputText, borderRadius} from '../globalVariables'
+import {colors, forms, heightsInputText, borderRadius, customizeTheme} from '../globalVariables'
 
 
-export const validations = ( {text, disabled: disabledBtn, shape, color, size, border} ) =>{
+export const validations = ( {text, disabled: disabledBtn, shape, color, size, border, themes} ) =>{
+
+  let colorsComponent  = JSON.parse(JSON.stringify(colors));
+  if (themes) {
+    colorsComponent = customizeTheme(themes, JSON.parse(JSON.stringify(colors)));
+  }
 
   text = text || '';
   shape = shape?
@@ -9,8 +14,8 @@ export const validations = ( {text, disabled: disabledBtn, shape, color, size, b
     : 'contained';
 
   color = color?
-    colors[color] || colors['primary']
-    : colors['primary'];
+    colorsComponent[color] || colorsComponent['primary']
+    : colorsComponent['primary'];
 
   let overallColor, backgroundBtn, backgroundBtnHover, borderBtn, borderBtnHover ;
   let cursor = 'pointer'

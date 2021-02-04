@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { SelectInput } from 'lium-react-ui-library';
 
+const array = [
+  {
+    id: 'USA',
+    value: 'United States'
+  },
+  {
+    id: 'COL',
+    value: 'Colombia'
+  }
+];
+
 export const SelectInputList = () => {
 
-  const [selectons, setSelectons] = useState([]);
-  const [array, setArray] = useState([
-    {
-      id: 'USA',
-      value: 'United States'
-    },
-    {
-      id: 'COL',
-      value: 'Colombia'
-    }
-  ])
+  const [_, setSelectons] = useState([]);
 
 
   const axt = (items) => {

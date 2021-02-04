@@ -1,7 +1,12 @@
-import {colors, heightsInputText, borderRadius} from '../globalVariables'
+import {colors, heightsInputText, borderRadius, customizeTheme} from '../globalVariables'
 
 
-export const validationsInputAutocomplete= ( { disabled: disabledInputText, color, size, border} ) =>{
+export const validationsInputAutocomplete= ( { disabled: disabledInputText, color, size, border, themes} ) =>{
+
+  let colorsComponent  = JSON.parse(JSON.stringify(colors));
+  if (themes) {
+    colorsComponent = customizeTheme(themes, JSON.parse(JSON.stringify(colors)));
+  }
 
   const shapeSize = size && heightsInputText[size]?
   heightsInputText[size].shape
@@ -11,10 +16,10 @@ export const validationsInputAutocomplete= ( { disabled: disabledInputText, colo
   heightsInputText[size].font
   : heightsInputText['medium'].font;
 
-  let borderColor = color && colors[color]?
-    colors[color].normal
+  let borderColor = color && colorsComponent[color]?
+    colorsComponent[color].normal
     :
-    colors['primary'].normal;
+    colorsComponent['primary'].normal;
 
   border = border && borderRadius[border]?
     borderRadius[border]

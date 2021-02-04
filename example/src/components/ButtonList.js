@@ -1,12 +1,27 @@
 import React from 'react';
-import { Button } from 'lium-react-ui-library'
+import { Button } from 'lium-react-ui-library';
+
+const theme = {
+  primary: {
+    normal: '#bf00ff',
+    hover: '#400554',
+  },
+  secondary: {
+    normal: '#0ac9ff',
+    hover: '#196d84',
+  },
+  danger: {
+      normal: '#ff0000',
+      hover: '#cc0000',
+  },
+}
 
 export const ButtonList = () => {
   return (
     <div>
 
       <div>
-        <Button color="primary" text="primary" />
+        <Button color="primary" themes={theme} text="primary" />
         <Button color="secondary"text="secondary" />
         <Button color="danger"text="danger" />
         <Button color="success"text="success" />

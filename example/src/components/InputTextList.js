@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InputText } from 'lium-react-ui-library';
 
 export const InputTextList = () => {
+
+  const [state, setstate] = useState("hello");
 
   return (
     <>
@@ -25,6 +27,7 @@ export const InputTextList = () => {
         <InputText border="none" placeholder="small"/>
         <InputText border="normal" placeholder="medium" />
         <InputText border="strong" placeholder="large" />
+        <InputText border="strong" placeholder="large" onChange={(e) =>{ setstate(e.target.value) }} value={state}/>
       </div>
     </>
   )

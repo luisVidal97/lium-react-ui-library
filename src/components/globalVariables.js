@@ -56,4 +56,13 @@ const defaultStyle = {
   hover: '#686767',
 }
 
-export { forms, borderRadius, heightsInputText, colors, defaultStyle } ;
+const customizeTheme = (theme, colors) => {
+  for(let item in theme){
+    if(colors[item] && theme[item].normal){
+      colors[item].normal = theme[item].normal
+    }
+  }
+  return colors;
+}
+
+export { forms, borderRadius, heightsInputText, colors, defaultStyle, customizeTheme} ;
