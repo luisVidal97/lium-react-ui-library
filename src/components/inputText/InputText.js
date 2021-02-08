@@ -10,7 +10,7 @@ const InputText = (props) => {
   return (
     <Fragment>
       <StyledInputText
-        type="text"
+        type={sources.type}
         maxLength={props.maxLength}
         placeholder={props.placeholder}
         value={props.value}

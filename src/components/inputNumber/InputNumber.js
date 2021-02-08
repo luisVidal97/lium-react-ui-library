@@ -68,6 +68,7 @@ InputNumber.propTypes = {
   disabled: PropTypes.string,
   color: PropTypes.string,
   placeholder: PropTypes.string,
+  formatter: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
   theme: PropTypes.shape({

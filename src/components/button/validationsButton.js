@@ -8,6 +8,8 @@ export const validations = ( {text, disabled: disabledBtn, shape, color, size, b
     colorsComponent = customizeTheme(themes, JSON.parse(JSON.stringify(colors)));
   }
 
+
+
   text = text || '';
   shape = shape?
     forms.find(item => item === shape) || 'contained'
@@ -46,6 +48,7 @@ export const validations = ( {text, disabled: disabledBtn, shape, color, size, b
     borderBtn = color.normal;
     borderBtnHover = color.hover;
   }
+
 
 
   const shapeSize = size && heightsInputText[size]?

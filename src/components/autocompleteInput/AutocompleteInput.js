@@ -3,11 +3,21 @@ import PropTypes from 'prop-types';
 import { StyledInputText, StyledList, StyledInputListItem } from './StyledInputAutocomplete';
 import { validationsInputAutocomplete } from './validationsInputAutoComplete';
 
+/*
+  This is an simple input with a extra functionality to suggest different words depending on you
+  are writing. This is a controlled component that has his own state. Notice, there are a prop very
+  important: ownItems. This is an array with the word that the user want to show like suggestions. If
+  is undefined, the component will consume api that fetch similar words.
+
+*/
 const AutocompleteInput = (props) => {
 
   const [suggestions, setSuggestions] = useState([]);
   const [items, setItems] = useState([]);
   const [inpuText, setInpuText] = useState('');
+
+  const sources = validationsInputAutocomplete(props);
+
 
   useEffect(() => {
     if(props.ownItems){
@@ -24,7 +34,6 @@ const AutocompleteInput = (props) => {
     }
   }, [inpuText])
 
-  const sources = validationsInputAutocomplete(props);
 
 
   const handleOnChange = ({target}) =>{
@@ -73,9 +82,11 @@ const AutocompleteInput = (props) => {
         }}
         onKeyPress={ (e)=> choosenSuggestions(e.target.value) }
       />
+
       {
         renderSuggestions()
       }
+
     </div>
   )
 }
@@ -89,6 +100,32 @@ AutocompleteInput.propTypes = {
   maxLength: PropTypes.string,
   disabled: PropTypes.string,
   onChange: PropTypes.func,
+  theme: PropTypes.shape({
+    primary: PropTypes.shape({
+      normal: PropTypes.string,
+      hover: PropTypes.string,
+    }),
+    secondary: PropTypes.shape({
+      normal: PropTypes.string,
+      hover: PropTypes.string,
+    }),
+    danger: PropTypes.shape({
+      normal: PropTypes.string,
+      hover: PropTypes.string,
+    }),
+    warning: PropTypes.shape({
+      normal: PropTypes.string,
+      hover: PropTypes.string,
+    }),
+    success: PropTypes.shape({
+      normal: PropTypes.string,
+      hover: PropTypes.string,
+    }),
+    dark: PropTypes.shape({
+      normal: PropTypes.string,
+      hover: PropTypes.string,
+    }),
+  }),
 }
 
 

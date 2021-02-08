@@ -9,6 +9,7 @@ export const InputTextList = () => {
     <>
       <div>
         <InputText placeholder="primary" color="primary"/>
+        <InputText placeholder="primary" color="primary"/>
         <InputText placeholder="secondary" color="secondary"/>
         <InputText placeholder="danger" color="danger"/>
         <InputText placeholder="success" color="success"/>

@@ -1,7 +1,7 @@
 import {colors, heightsInputText, borderRadius, customizeTheme} from '../globalVariables'
 
 
-export const validationsInputText = ( { disabled: disabledInputText, color, size, border, themes} ) =>{
+export const validationsInputText = ( { disabled: disabledInputText, color, size, border, themes, type} ) =>{
 
   let colorsComponent  = JSON.parse(JSON.stringify(colors));
   if (themes) {
@@ -33,6 +33,8 @@ export const validationsInputText = ( { disabled: disabledInputText, color, size
     color = 'transparent';
   }
 
+  type = (type && type ==='text' || type ==='password') ? type: 'text';
+
   return {
     shapeSize,
     fontSize,
@@ -40,6 +42,7 @@ export const validationsInputText = ( { disabled: disabledInputText, color, size
     border,
     backgroundColor,
     pointerEvent,
+    type
   };
 }
 

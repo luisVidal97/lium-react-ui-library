@@ -14,7 +14,7 @@ const array = [
 
 export const SelectInputList = () => {
 
-  const [_, setSelectons] = useState([]);
+  const [ , setSelectons] = useState([]);
 
 
   const axt = (items) => {

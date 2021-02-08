@@ -85,6 +85,7 @@ describe('Tests over <AutocompleteInput/>: features and behavior', () => {
   });
 
   test('should change input and show items that are given through props like array', () => {
+
     const list = ['Luis', 'Monica', 'Maximiliam', 'Ricky', 'Mortin'];
     wrapper = mount(<AutocompleteInput ownItems={list} />);
     const input  = wrapper.find(StyledInputText);
