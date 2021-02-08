@@ -8,7 +8,7 @@ export const InputTextList = () => {
   return (
     <>
       <div>
-        <InputText placeholder="primary" color="primary"/>
+        <InputText type="password" placeholder="primary" color="primary"/>
         <InputText placeholder="primary" color="primary"/>
         <InputText placeholder="secondary" color="secondary"/>
         <InputText placeholder="danger" color="danger"/>

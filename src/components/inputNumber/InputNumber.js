@@ -43,7 +43,7 @@ const InputNumber = (props) => {
                 value={validateNumbers(props)}
 
                 onChange = {(e)=>{
-                  props.onChange(e, e.target.value.replace(/(,*)/g, ''));
+                  props.onChange(e, e.target.value.replace(/(,*)/g, '').replace(/[^0-9\-.]/g, ''));
                 }}
                 {...sources}
               />
