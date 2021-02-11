@@ -13,7 +13,7 @@ This is a simple UI library for React which one has 5 implemented components:
 4. Select Input
 5. Autocomplete
 
-If you want to know furthermore, please visit the (Demo application repositiory)[https://github.com/luisVidal97/demo-lium-library] or visit the (official page)[https://vibrant-joliot-40e6e6.netlify.app/].
+If you want to know furthermore, please visit the [Demo application repositiory](https://github.com/luisVidal97/demo-lium-library) or visit the [official page](https://vibrant-joliot-40e6e6.netlify.app/).
 
 ## Install
 
