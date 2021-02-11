@@ -4,16 +4,17 @@ import { shallow } from'enzyme';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 
-import { heightsInputText, colors, borderRadius } from '../components/globalVariables';
+import { heightComponents, colors, borderRadius } from '../components/globalVariables';
 import InputText from '../components/inputText/InputText';
 import {StyledInputText} from '../components/inputText/StyledInputText';
+
 
 describe('Tests over <InputText/>: features and behavior', () => {
 
   let wrapper, tree;
 
 
-  test('should show <Button/> successfully', () => {
+  test('should show <InputText/> successfully', () => {
     wrapper = shallow(<InputText />);
     expect( wrapper ).toMatchSnapshot();
   });
@@ -23,8 +24,8 @@ describe('Tests over <InputText/>: features and behavior', () => {
   input[focus]border-color: #115293;  input[focus]box-shadow: 0 0 5px #115293;
   `, () => {
     tree = renderer.create(<InputText />).toJSON();
-    expect(tree).toHaveStyleRule('height', heightsInputText.medium.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.medium.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.medium.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.medium.font);
     expect(tree).toHaveStyleRule('border-radius', borderRadius.normal);
     expect(tree).toHaveStyleRule('background-color', 'transparent');
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
@@ -34,8 +35,8 @@ describe('Tests over <InputText/>: features and behavior', () => {
 
   test('should show default style values of text input invoking <InputText /> (with props but wrong values)', () => {
     tree = renderer.create(<InputText disabled='treu' size='sm' color='green' border='24' moove='large'/>).toJSON();
-    expect(tree).toHaveStyleRule('height', heightsInputText.medium.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.medium.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.medium.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.medium.font);
     expect(tree).toHaveStyleRule('border-radius', borderRadius.normal);
     expect(tree).toHaveStyleRule('background-color', 'transparent');
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
@@ -49,8 +50,8 @@ describe('Tests over <InputText/>: features and behavior', () => {
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
     expect(tree).toHaveStyleRule('border-color', colors.secondary.normal, { modifier: ':focus', });
     expect(tree).toHaveStyleRule('box-shadow', `0 0 5px ${colors.secondary.normal}`, { modifier: ':focus', });
-    expect(tree).toHaveStyleRule('height', heightsInputText.large.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.large.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.large.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.large.font);
     expect(tree).toHaveStyleRule('border-radius', borderRadius.strong);
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
   });

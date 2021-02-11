@@ -18,4 +18,4 @@ export const StyledInputText = styled.input`
     border-color: ${props => props.color};
     box-shadow: 0 0 5px ${props => props.color};
   }
-`
+`;

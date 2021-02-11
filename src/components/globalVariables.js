@@ -8,7 +8,7 @@ const borderRadius = {
   none: '0px'
 }
 
-const heightsInputText = {
+const heightComponents = {
   large: {
     shape: '40px',
     font: '1.2rem'
@@ -65,4 +65,4 @@ const customizeTheme = (theme, colors) => {
   return colors;
 }
 
-export { forms, borderRadius, heightsInputText, colors, defaultStyle, customizeTheme} ;
+export { forms, borderRadius, heightComponents, colors, defaultStyle, customizeTheme} ;

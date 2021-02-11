@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledInputNumber } from './StyledInputNumber';
-import { StyledInputDiv } from './StyledInputDiv';
+import { StyledInputNumber, StyledInputDiv } from './StyledInputNumber';
 import { validationsInputNumber, validateNumbers, formatter } from './validationsInputNumber';
 
+/**
+ * Component that display a input which values can be only numbers, with a some styles by default.
+ * This functional component uses a specific function that check the variables and convert every props in a concrete
+ * value to give it certain features. Note that to develop this component, was used Styled
+ * Component library to give dinamic styles according 'props'. Please, watch the validationsInputNumber.js
+ * file to know more about the validations. The conditional styles are in StyledInputNumber.js . Both are in
+ * the root of this folder.
+ * @param {prefix, border, size, disabled, color, placeholder, formatter, value, onChange, theme} props
+ */
 
 const InputNumber = (props) => {
 

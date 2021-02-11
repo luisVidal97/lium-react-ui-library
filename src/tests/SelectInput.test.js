@@ -32,6 +32,7 @@ describe('Tests over <SelectInput/>: features and behavior', () => {
   });
 
 
+
   test('should show select with title and the items', () => {
 
     wrapper = mount(<SelectInput items={list} onSelectItems={onSelectItems} title={title}/>);

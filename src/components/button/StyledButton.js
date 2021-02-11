@@ -26,4 +26,4 @@ export const StyledButton = styled.button`
   border-radius:${ props => props.borderRadiusBtn};
   margin: 0 1em;
   padding: 0.25em 1em;
-`
+`;

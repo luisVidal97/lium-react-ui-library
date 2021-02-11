@@ -7,10 +7,12 @@ exports[`Tests over <Button/>: features and behavior should show <Button/> succe
     backgroundBtnHover="#0A0A36"
     borderBtn="#115293"
     borderBtnHover="#0A0A36"
+    borderRadiusBtn="10px"
     cursor="pointer"
+    fontSize="1rem"
     overallColor="white"
     shape="contained"
-    size="40px"
+    shapeSize="32px"
     text=""
   />
 </Fragment>

@@ -1,4 +1,4 @@
-import {colors, heightsInputText, borderRadius, customizeTheme} from '../globalVariables'
+import {colors, heightComponents, borderRadius, customizeTheme} from '../globalVariables'
 
 
 export const validationsInputNumber = ( { prefix, disabled: disabledInputText, color, size, border, themes} ) =>{
@@ -13,13 +13,13 @@ export const validationsInputNumber = ( { prefix, disabled: disabledInputText, c
     prefix.charAt(0)
     : '';
 
-  const shapeSize = size && heightsInputText[size]?
-  heightsInputText[size].shape
-  : heightsInputText['medium'].shape;
+  const shapeSize = size && heightComponents[size]?
+  heightComponents[size].shape
+  : heightComponents['medium'].shape;
 
-  const fontSize = size && heightsInputText[size]?
-  heightsInputText[size].font
-  : heightsInputText['medium'].font;
+  const fontSize = size && heightComponents[size]?
+  heightComponents[size].font
+  : heightComponents['medium'].font;
 
   color = color && colorsComponent[color]?
     colorsComponent[color].normal

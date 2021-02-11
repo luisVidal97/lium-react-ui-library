@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests over <InputText/>: features and behavior should show <Button/> successfully 1`] = `
+exports[`Tests over <InputText/>: features and behavior should show <InputText/> successfully 1`] = `
 <Fragment>
   <styled.input
     backgroundColor="transparent"

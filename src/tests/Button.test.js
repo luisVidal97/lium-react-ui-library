@@ -4,7 +4,7 @@ import { shallow } from'enzyme';
 import 'jest-styled-components'
 import renderer from 'react-test-renderer'
 
-import { heights, colors } from '../components/globalVariables';
+import { heightComponents, colors } from '../components/globalVariables';
 import  Button from '../components/button/Button';
 import  {StyledButton} from '../components/button/StyledButton';
 
@@ -23,7 +23,7 @@ describe('Tests over <Button/>: features and behavior', () => {
   test('should show default style values of button invoking <Button /> component (without props)', () => {
     tree = renderer.create(<Button />).toJSON();
     expect(tree).toHaveStyleRule('color', 'white');
-    expect(tree).toHaveStyleRule('height', heights.medium);
+    expect(tree).toHaveStyleRule('height', heightComponents.medium.shape);
     expect(tree).toHaveStyleRule('background-color', colors.primary.normal);
     expect(tree).toHaveStyleRule('background-color', colors.primary.hover, { modifier: ':hover', });
     expect(tree).toHaveStyleRule('cursor', 'pointer', { modifier: ':hover', });
@@ -32,7 +32,7 @@ describe('Tests over <Button/>: features and behavior', () => {
   test('should show default style values of button invoking <Button /> component (with props but wrong values)', () => {
     tree = renderer.create(<Button disabled='hi' size='sm' shape='cover' text='24' moove="large"/>).toJSON();
     expect(tree).toHaveStyleRule('color', 'white');
-    expect(tree).toHaveStyleRule('height', heights.medium);
+    expect(tree).toHaveStyleRule('height', heightComponents.medium.shape);
     expect(tree).toHaveStyleRule('background-color', colors.primary.normal);
     expect(tree).toHaveStyleRule('background-color', colors.primary.hover, { modifier: ':hover', });
     expect(tree).toHaveStyleRule('cursor', 'pointer', { modifier: ':hover', });
@@ -41,7 +41,7 @@ describe('Tests over <Button/>: features and behavior', () => {
   test('should show outlined, large and disabled button', () => {
     tree = renderer.create(<Button disabled='true' size='large' shape='outlined' />).toJSON();
     expect(tree).toHaveStyleRule('color', '#E0E0E0');
-    expect(tree).toHaveStyleRule('height', heights.large);
+    expect(tree).toHaveStyleRule('height', heightComponents.large.shape);
     expect(tree).toHaveStyleRule('background-color', 'white');
     expect(tree).toHaveStyleRule('background-color',  'white', { modifier: ':hover', });
     expect(tree).toHaveStyleRule('cursor', 'default', { modifier: ':hover', });

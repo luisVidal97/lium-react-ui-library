@@ -1,11 +1,21 @@
 import React, {Fragment} from 'react';
 import { StyledButton } from './StyledButton';
-import { validations } from './validationsButton';
+import { validationsButton } from './validationsButton';
 import PropTypes from 'prop-types';
+
+/**
+ * Component that display a button with a some styles by default. This functional component
+ * uses a specific function that check the variables and convert every props in a concrete
+ * value to give it certain features. Note that to develop this component, was used Styled
+ * Component library to give dinamic styles according 'props'. Please watch the validationsButton.js
+ * file to know more about the validations. The conditional styles are in StyledButton.js . Both are in
+ * the root of this folder.
+ * @param {size, disabled, shape, text, color, onClick, border, theme} props
+ */
 
 const Button = (props) => {
 
-  const source = validations( props );
+  const source = validationsButton( props );
 
   return (
     <Fragment>

@@ -4,7 +4,7 @@ import { shallow, mount } from'enzyme';
 import 'jest-styled-components';
 import renderer from 'react-test-renderer';
 
-import { heightsInputText, colors, borderRadius } from '../components/globalVariables';
+import { heightComponents, colors, borderRadius } from '../components/globalVariables';
 import AutocompleteInput from '../components/autocompleteInput/AutocompleteInput';
 import {StyledInputText, StyledInputListItem} from '../components/autocompleteInput/StyledInputAutocomplete';
 
@@ -25,8 +25,8 @@ describe('Tests over <AutocompleteInput/>: features and behavior', () => {
 
     tree = renderer.create(<AutocompleteInput />).toJSON().children[0];
     expect(tree.type).toBe('input');
-    expect(tree).toHaveStyleRule('height', heightsInputText.medium.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.medium.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.medium.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.medium.font);
     expect(tree).toHaveStyleRule('background-color', 'transparent');
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
     expect(tree).toHaveStyleRule('border-radius', borderRadius.normal);
@@ -38,8 +38,8 @@ describe('Tests over <AutocompleteInput/>: features and behavior', () => {
   test('should show default style values of text input invoking <AutocompleteInput /> (with props but wrong values)', () => {
     tree = renderer.create(<AutocompleteInput disabled='treu' size='sm' color='green' border='24' moove='large'/>).toJSON().children[0];
     expect(tree.type).toBe('input');
-    expect(tree).toHaveStyleRule('height', heightsInputText.medium.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.medium.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.medium.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.medium.font);
     expect(tree).toHaveStyleRule('background-color', 'transparent');
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
     expect(tree).toHaveStyleRule('border-radius', borderRadius.normal);
@@ -61,8 +61,8 @@ describe('Tests over <AutocompleteInput/>: features and behavior', () => {
     expect(tree.type).toBe('input');
     expect(tree.props.maxLength).toBe(props.maxLength);
     expect(tree.props.placeholder).toBe(props.placeholder);
-    expect(tree).toHaveStyleRule('height', heightsInputText.large.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.large.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.large.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.large.font);
     expect(tree).toHaveStyleRule('background-color', 'transparent');
     expect(tree).toHaveStyleRule('pointer-events', 'auto');
     expect(tree).toHaveStyleRule('border-radius', borderRadius.strong);
@@ -76,8 +76,8 @@ describe('Tests over <AutocompleteInput/>: features and behavior', () => {
     expect(tree.type).toBe('input');
     expect(tree).toHaveStyleRule('background-color', '#E0E0E0');
     expect(tree).toHaveStyleRule('pointer-events', 'none');
-    expect(tree).toHaveStyleRule('height', heightsInputText.large.shape);
-    expect(tree).toHaveStyleRule('font-size', heightsInputText.large.font);
+    expect(tree).toHaveStyleRule('height', heightComponents.large.shape);
+    expect(tree).toHaveStyleRule('font-size', heightComponents.large.font);
     expect(tree).toHaveStyleRule('border-radius', borderRadius.strong);
     expect(tree).toHaveStyleRule('border-color', 'transparent', { modifier: ':hover' });
     expect(tree).toHaveStyleRule('border-color', 'transparent', { modifier: ':focus' });
@@ -111,5 +111,19 @@ describe('Tests over <AutocompleteInput/>: features and behavior', () => {
     expect(text4).toBe(list[4]);
   });
 
+  test('should show nothing because list is empty', () => {
+
+    const list = [];
+    wrapper = mount(<AutocompleteInput ownItems={list} />);
+    const input  = wrapper.find(StyledInputText);
+    const event = {
+      target: {
+        value : 'Lu'
+      }
+    }
+    input.simulate('change', event);
+    const text  = wrapper.find(StyledInputListItem);
+    expect(text).toEqual({});
+  });
 
 })
